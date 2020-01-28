@@ -1,0 +1,122 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+	<edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/></edmx:Reference>
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/></edmx:Reference>
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/></edmx:Reference>
+	<edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/></edmx:Reference>
+	<edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/></edmx:Reference>
+	<edmx:Reference Uri="../../../sap/zzc_prodsubstnexclns_sb/$metadata"><edmx:Include Namespace="ZZC_PRODSUBSTNEXCLNS_SB" Alias="SAP"/></edmx:Reference>
+	<edmx:DataServices>
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="zzc_prodsubstnexclns_sb_van.v1">
+			<Annotations Target="cds_zzc_prodsubstnexclsn_srv.ZZC_ProdSubstnExclsnType/MDSubstnUUID"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zzc_prodsubstnexclsn_srv.ZZC_ProdSubstnExclsnType/MDObjectTypeCode"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zzc_prodsubstnexclsn_srv.ZZC_ProdSubstnExclsnType/Criticality"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zzc_prodsubstnexclsn_srv.ZZC_ProdSubstnExclsnType/MaterialName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zzc_prodsubstnexclsn_srv.ZZC_ProdSubstnExclsnType/GroupDescription"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zzc_prodsubstnexclsn_srv.ZZC_ProdSubstnExclsnType/MDSubstnStatus"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zzc_prodsubstnexclsn_srv.ZZC_ProdSubstnExclsnType/CreatedByUser"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zzc_prodsubstnexclsn_srv.ZZC_ProdSubstnExclsnType/CreatedOn"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zzc_prodsubstnexclsn_srv.ZZC_ProdSubstnExclsnType/LastChangedByUser"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zzc_prodsubstnexclsn_srv.ZZC_ProdSubstnExclsnType/LastChangedOn"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="cds_zzc_prodsubstnexclsn_srv.ZZC_ProdSubstnExclsnType">
+				<Annotation Term="UI.HeaderFacets">
+					<Collection>
+						<Record Type="UI.ReferenceFacet"><PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#pqr"/></Record>
+						<Record Type="UI.ReferenceFacet"><PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#Admin"/></Record>
+						<Record Type="UI.ReferenceFacet"><PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#User"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="Admin">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Created By"/><PropertyValue Property="Value" Path="CreatedByUser"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Created On"/><PropertyValue Property="Value" Path="CreatedOn"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="Basic">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="MDSubstnContextObject1"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="MDSubstnGroup"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="MDSubstnReason"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="Time">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ValidTo"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ValidFrom"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="User">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Changed By"/><PropertyValue Property="Value" Path="LastChangedByUser"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Changed On"/><PropertyValue Property="Value" Path="LastChangedOn"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="pqr">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Status"/><PropertyValue Property="Criticality" Path="Criticality"/><PropertyValue Property="CriticalityRepresentation" EnumMember="UI.CriticalityRepresentationType/WithoutIcon"/><PropertyValue Property="Value" Path="Status"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.HeaderInfo">
+					<Record><PropertyValue Property="TypeName" String="Product Exclusion"/><PropertyValue Property="TypeNamePlural" String="Product Exclusions"/>
+						<PropertyValue Property="Title">
+							<Record Type="UI.DataField"><PropertyValue Property="Value" Path="MDObject"/></Record>
+						</PropertyValue>
+						<PropertyValue Property="Description">
+							<Record Type="UI.DataField"><PropertyValue Property="Value" Path="MaterialName"/></Record>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.Identification">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="MDSubstnReason"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="MDSubstnGroup"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="MDSubstnContextObject1"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ValidFrom"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ValidTo"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="MDObject"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="MDSubstnContextObject1"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="MDSubstnGroup"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ValidFrom"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ValidTo"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="MDSubstnReason"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Criticality" Path="Criticality"/><PropertyValue Property="CriticalityRepresentation" EnumMember="UI.CriticalityRepresentationType/WithoutIcon"/><PropertyValue Property="Value" Path="Status"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.SelectionFields">
+					<Collection>
+						<PropertyPath>MDObject</PropertyPath>
+						<PropertyPath>MDSubstnContextObject1</PropertyPath>
+						<PropertyPath>MDSubstnGroup</PropertyPath>
+						<PropertyPath>Status</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

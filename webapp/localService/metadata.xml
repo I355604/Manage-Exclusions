@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:Reference
+		Uri="https://webidecp-fiori.dispatcher.int.sap.eu2.hana.ondemand.com/destinations/ER9CLNT600/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-fiori.dispatcher.int.sap.eu2.hana.ondemand.com/destinations/ER9CLNT600/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-fiori.dispatcher.int.sap.eu2.hana.ondemand.com/destinations/ER9CLNT600/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-fiori.dispatcher.int.sap.eu2.hana.ondemand.com/destinations/ER9CLNT600/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-fiori.dispatcher.int.sap.eu2.hana.ondemand.com/destinations/ER9CLNT600/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-fiori.dispatcher.int.sap.eu2.hana.ondemand.com/destinations/ER9CLNT600/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-fiori.dispatcher.int.sap.eu2.hana.ondemand.com/destinations/ER9CLNT600/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-fiori.dispatcher.int.sap.eu2.hana.ondemand.com/destinations/ER9CLNT600/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/></edmx:Reference>
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="cds_zzc_prodsubstnexclsn_srv" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityType Name="I_MaterialStdVHType" sap:label="Material" sap:value-list="true" sap:content-version="1">
+				<Key><PropertyRef Name="Material"/></Key><Property Name="Material" Type="Edm.String" Nullable="false" MaxLength="40" sap:display-format="UpperCase" sap:text="Material_Text"
+					sap:label="Material" sap:quickinfo="Material Number"/><Property Name="Material_Text" Type="Edm.String" MaxLength="40" sap:label="Material Description" sap:creatable="false" sap:updatable="false"/></EntityType>
+			<EntityType Name="I_PlantStdVHType" sap:label="Plant Std VH" sap:value-list="true" sap:content-version="1">
+				<Key><PropertyRef Name="Plant"/></Key><Property Name="Plant" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:text="PlantName"
+					sap:label="Plant"/><Property Name="PlantName" Type="Edm.String" MaxLength="30" sap:label="Plant Name"/></EntityType>
+			<EntityType Name="ZZC_ProdSubstnExclsnType" sap:label="C View For Substitution Exclusion" sap:content-version="1">
+				<Key><PropertyRef Name="MDSubstnUUID"/></Key><Property Name="setToActive_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="setToInActive_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="setToObsolete_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="MDSubstnUUID" Type="Edm.Guid" Nullable="false" sap:label="Substitution UUID"/><Property Name="MDObjectTypeCode" Type="Edm.String" MaxLength="3" sap:display-format="NonNegative"/><Property Name="MDObject" Type="Edm.String" MaxLength="40" sap:text="MaterialName" sap:label="Product" sap:quickinfo="Substitution Object"
+					sap:value-list="standard"/><Property Name="Criticality" Type="Edm.Byte"/><Property Name="MaterialName" Type="Edm.String" MaxLength="40" sap:label="Material Description"/><Property Name="Plant" Type="Edm.String" MaxLength="30" sap:label="Plant Name"/><Property Name="MDSubstnContextObject1" Type="Edm.String" MaxLength="40" sap:text="Plant" sap:label="Plant" sap:quickinfo="Context Object"
+					sap:value-list="standard"/><Property Name="MDSubstnGroup" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:text="GroupDescription" sap:label="Group"
+					sap:quickinfo="Group Name" sap:value-list="standard"/><Property Name="GroupDescription" Type="Edm.String" MaxLength="60" sap:label="Group Description"/><Property Name="MDSubstnReason" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:text="MDSubstnReasonDescription"
+					sap:label="Reason" sap:quickinfo="Reason for master data substitution" sap:value-list="standard"/><Property Name="MDSubstnReasonDescription" Type="Edm.String" MaxLength="60" sap:label="Description"/><Property Name="MDSubstnStatus" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:text="Status" sap:label="Status"
+					sap:quickinfo="Status Code" sap:value-list="standard"/><Property Name="Status" Type="Edm.String" MaxLength="60" sap:label="Status" sap:quickinfo="Short Text for Fixed Values"/><Property Name="ValidFrom" Type="Edm.DateTimeOffset" Precision="0" sap:label="Valid From"/><Property Name="ValidTo" Type="Edm.DateTimeOffset" Precision="0" sap:label="Valid To"/><Property Name="CreatedByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Created By"
+					sap:quickinfo="Created By User"/><Property Name="CreatedOn" Type="Edm.DateTimeOffset" Precision="7" sap:label="Created At" sap:quickinfo="Creation Timestamp"/><Property Name="LastChangedByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Changed By"
+					sap:quickinfo="Last Changed By User"/><Property Name="LastChangedOn" Type="Edm.DateTimeOffset" Precision="7" ConcurrencyMode="Fixed" sap:label="Changed At"
+					sap:quickinfo="Master data substitution last change timestamp"/></EntityType>
+			<EntityType Name="ZZI_SubstnGrpVHType" sap:label="value help for substituion groups" sap:value-list="true" sap:content-version="1">
+				<Key><PropertyRef Name="ObjectType"/><PropertyRef Name="GroupName"/><PropertyRef Name="GroupVersion"/></Key><Property Name="ObjectType" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase"
+					sap:label="Business Object Type"/><Property Name="GroupName" Type="Edm.String" Nullable="false" MaxLength="20" sap:display-format="UpperCase" sap:label="Group"
+					sap:quickinfo="Group Name"/><Property Name="GroupVersion" Type="Edm.Int32" Nullable="false" sap:label="Version"/><Property Name="GroupDescription" Type="Edm.String" MaxLength="60" sap:label="Group Description"/></EntityType>
+			<EntityType Name="ZZI_SubstnRsnVHType" sap:label="Reason" sap:value-list="true" sap:content-version="1">
+				<Key><PropertyRef Name="MDObjectTypeCode"/><PropertyRef Name="MDSubstnReason"/></Key><Property Name="MDObjectTypeCode" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase"
+					sap:label="Business Object Type"/><Property Name="MDSubstnReason" Type="Edm.String" Nullable="false" MaxLength="20" sap:display-format="UpperCase" sap:label="Reason Code"
+					sap:quickinfo="Reason for master data substitution"/><Property Name="MDSubstnReasonDescription" Type="Edm.String" MaxLength="60" sap:label="Description"/></EntityType>
+			<EntityType Name="ZZI_SubstStatusVHType" sap:label="Value help view to fetch status domain" sap:value-list="true" sap:content-version="1">
+				<Key><PropertyRef Name="SAPDataDictionaryDomain"/><PropertyRef Name="StatusCode"/></Key><Property Name="SAPDataDictionaryDomain" Type="Edm.String" Nullable="false" MaxLength="30" sap:display-format="UpperCase"
+					sap:label="Domain Name"/><Property Name="StatusCode" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Status Code"
+					sap:quickinfo="Values for Domains: Single Value/Lower Limit"/><Property Name="Status" Type="Edm.String" MaxLength="60" sap:label="Status" sap:quickinfo="Short Text for Fixed Values"/></EntityType>
+			<EntityContainer Name="cds_zzc_prodsubstnexclsn_srv_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true"
+				sap:supported-formats="atom json xlsx"><EntitySet Name="I_MaterialStdVH" EntityType="cds_zzc_prodsubstnexclsn_srv.I_MaterialStdVHType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:searchable="true" sap:content-version="1"/><EntitySet Name="I_PlantStdVH" EntityType="cds_zzc_prodsubstnexclsn_srv.I_PlantStdVHType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:searchable="true" sap:content-version="1"/><EntitySet Name="ZZC_ProdSubstnExclsn" EntityType="cds_zzc_prodsubstnexclsn_srv.ZZC_ProdSubstnExclsnType" sap:searchable="true"
+				sap:content-version="1"/><EntitySet Name="ZZI_SubstnGrpVH" EntityType="cds_zzc_prodsubstnexclsn_srv.ZZI_SubstnGrpVHType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:searchable="true" sap:content-version="1"/><EntitySet Name="ZZI_SubstnRsnVH" EntityType="cds_zzc_prodsubstnexclsn_srv.ZZI_SubstnRsnVHType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:searchable="true" sap:content-version="1"/><EntitySet Name="ZZI_SubstStatusVH" EntityType="cds_zzc_prodsubstnexclsn_srv.ZZI_SubstStatusVHType" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+				<FunctionImport Name="setToActive" ReturnType="cds_zzc_prodsubstnexclsn_srv.ZZC_ProdSubstnExclsnType" EntitySet="ZZC_ProdSubstnExclsn"
+					m:HttpMethod="POST" sap:action-for="cds_zzc_prodsubstnexclsn_srv.ZZC_ProdSubstnExclsnType" sap:applicable-path="setToActive_ac"><Parameter Name="MDSubstnUUID" Type="Edm.Guid" Mode="In"/></FunctionImport>
+				<FunctionImport Name="setToInActive" ReturnType="cds_zzc_prodsubstnexclsn_srv.ZZC_ProdSubstnExclsnType" EntitySet="ZZC_ProdSubstnExclsn"
+					m:HttpMethod="POST" sap:action-for="cds_zzc_prodsubstnexclsn_srv.ZZC_ProdSubstnExclsnType" sap:applicable-path="setToInActive_ac"><Parameter Name="MDSubstnUUID" Type="Edm.Guid" Mode="In"/></FunctionImport>
+				<FunctionImport Name="setToObsolete" ReturnType="cds_zzc_prodsubstnexclsn_srv.ZZC_ProdSubstnExclsnType" EntitySet="ZZC_ProdSubstnExclsn"
+					m:HttpMethod="POST" sap:action-for="cds_zzc_prodsubstnexclsn_srv.ZZC_ProdSubstnExclsnType" sap:applicable-path="setToObsolete_ac"><Parameter Name="MDSubstnUUID" Type="Edm.Guid" Mode="In"/></FunctionImport>
+			</EntityContainer>
+			<Annotations Target="cds_zzc_prodsubstnexclsn_srv.ZZC_ProdSubstnExclsnType/MDObject" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Material"/><PropertyValue Property="CollectionPath" String="I_MaterialStdVH"/><PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="MDObject"/><PropertyValue Property="ValueListProperty" String="Material"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="Material_Text"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation><Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/></Annotations>
+			<Annotations Target="cds_zzc_prodsubstnexclsn_srv.ZZC_ProdSubstnExclsnType/MDSubstnContextObject1"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Plant Std VH"/><PropertyValue Property="CollectionPath" String="I_PlantStdVH"/><PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="MDSubstnContextObject1"/><PropertyValue Property="ValueListProperty" String="Plant"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="PlantName"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_zzc_prodsubstnexclsn_srv.ZZC_ProdSubstnExclsnType/MDSubstnGroup" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="value help for substituion groups"/><PropertyValue Property="CollectionPath" String="ZZI_SubstnGrpVH"/><PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="MDSubstnGroup"/><PropertyValue Property="ValueListProperty" String="GroupName"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="GroupDescription"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_zzc_prodsubstnexclsn_srv.ZZC_ProdSubstnExclsnType/MDSubstnReason" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Reason"/><PropertyValue Property="CollectionPath" String="ZZI_SubstnRsnVH"/><PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="MDSubstnReason"/><PropertyValue Property="ValueListProperty" String="MDSubstnReason"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="MDSubstnReasonDescription"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_zzc_prodsubstnexclsn_srv.ZZC_ProdSubstnExclsnType/MDSubstnStatus" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Value help view to fetch status domain"/><PropertyValue Property="CollectionPath" String="ZZI_SubstStatusVH"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="MDSubstnStatus"/><PropertyValue Property="ValueListProperty" String="StatusCode"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="Status"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_zzc_prodsubstnexclsn_srv.cds_zzc_prodsubstnexclsn_srv_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm"><Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+				<Annotation Term="Aggregation.ApplySupported">
+					<Record>
+						<PropertyValue Property="Transformations">
+							<Collection>
+								<String>aggregate</String>
+								<String>groupby</String>
+								<String>filter</String>
+							</Collection>
+						</PropertyValue><PropertyValue Property="Rollup" EnumMember="None"/></Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_zzc_prodsubstnexclsn_srv.cds_zzc_prodsubstnexclsn_srv_Entities/ZZC_ProdSubstnExclsn"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Capabilities.FilterRestrictions">
+					<Record>
+						<PropertyValue Property="NonFilterableProperties">
+							<Collection>
+								<PropertyPath>setToActive_ac</PropertyPath>
+								<PropertyPath>setToInActive_ac</PropertyPath>
+								<PropertyPath>setToObsolete_ac</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.SortRestrictions">
+					<Record>
+						<PropertyValue Property="NonSortableProperties">
+							<Collection>
+								<PropertyPath>setToActive_ac</PropertyPath>
+								<PropertyPath>setToInActive_ac</PropertyPath>
+								<PropertyPath>setToObsolete_ac</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_zzc_prodsubstnexclsn_srv.ZZC_ProdSubstnExclsnType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.SemanticKey">
+					<Collection>
+						<PropertyPath>MDSubstnReason</PropertyPath>
+						<PropertyPath>MDSubstnGroup</PropertyPath>
+						<PropertyPath>MDSubstnContextObject1</PropertyPath>
+						<PropertyPath>MDObject</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations><atom:link rel="self"
+				href="https://webidecp-fiori.dispatcher.int.sap.eu2.hana.ondemand.com/destinations/ER9CLNT600/sap/opu/odata/sap/ZZC_PRODSUBSTNEXCLNS_SB/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/><atom:link rel="latest-version"
+				href="https://webidecp-fiori.dispatcher.int.sap.eu2.hana.ondemand.com/destinations/ER9CLNT600/sap/opu/odata/sap/ZZC_PRODSUBSTNEXCLNS_SB/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

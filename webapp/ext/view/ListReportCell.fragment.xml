@@ -1,0 +1,4 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" >
+	<ObjectIdentifier title="{path:'MDObject', type:'sap.ui.model.odata.type.String'}"
+		text="{path:'MaterialName', type:'sap.ui.model.odata.type.String' }" titlePress="handleMaterial" titleActive="true" ></ObjectIdentifier>
+</core:FragmentDefinition>

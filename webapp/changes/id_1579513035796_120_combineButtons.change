@@ -1,0 +1,79 @@
+{
+	"fileName": "id_1579513035796_120_combineButtons",
+	"fileType": "change",
+	"changeType": "combineButtons",
+	"moduleName": "",
+	"reference": "Manage_Exlcusions.Component",
+	"packageName": "$TMP",
+	"content": {
+		"combineButtonSelectors": [{
+			"id": "Manage_Exlcusions::sap.suite.ui.generic.template.ObjectPage.view.Details::ZZC_ProdSubstnExclsn--action::cds_zzc_prodsubstnexclsn_srv.cds_zzc_prodsubstnexclsn_srv_Entities::setToActive",
+			"idIsLocal": false
+		}, {
+			"id": "Manage_Exlcusions::sap.suite.ui.generic.template.ObjectPage.view.Details::ZZC_ProdSubstnExclsn--action::cds_zzc_prodsubstnexclsn_srv.cds_zzc_prodsubstnexclsn_srv_Entities::setToInActive",
+			"idIsLocal": false
+		}, {
+			"id": "Manage_Exlcusions::sap.suite.ui.generic.template.ObjectPage.view.Details::ZZC_ProdSubstnExclsn--action::cds_zzc_prodsubstnexclsn_srv.cds_zzc_prodsubstnexclsn_srv_Entities::setToObsolete",
+			"idIsLocal": false
+		}],
+		"menuButtonIdSelector": {
+			"id": "id-1579513035796-121",
+			"idIsLocal": true
+		},
+		"menuIdSelector": {
+			"id": "id-1579513035796-122",
+			"idIsLocal": true
+		},
+		"buttonsIdForSave": [{
+			"id": "id-1579513035796-123-originalButtonId",
+			"idIsLocal": true
+		}, {
+			"id": "id-1579513035796-124-originalButtonId",
+			"idIsLocal": true
+		}, {
+			"id": "id-1579513035796-125-originalButtonId",
+			"idIsLocal": true
+		}]
+	},
+	"selector": {
+		"id": "Manage_Exlcusions::sap.suite.ui.generic.template.ObjectPage.view.Details::ZZC_ProdSubstnExclsn--template::ObjectPage::ObjectPageHeader",
+		"idIsLocal": false
+	},
+	"layer": "VENDOR",
+	"texts": {},
+	"namespace": "apps/Manage_Exlcusions/changes/",
+	"projectId": "Manage_Exlcusions",
+	"creation": "2020-01-20T09:37:26.169Z",
+	"originalLanguage": "EN",
+	"conditions": {},
+	"context": "",
+	"support": {
+		"generator": "Change.createInitialFileContent",
+		"service": "",
+		"user": "",
+		"sapui5Version": "1.73.2",
+		"sourceChangeFileName": "",
+		"compositeCommand": ""
+	},
+	"oDataInformation": {},
+	"dependentSelector": {
+		"combinedButtons": [{
+			"id": "Manage_Exlcusions::sap.suite.ui.generic.template.ObjectPage.view.Details::ZZC_ProdSubstnExclsn--action::cds_zzc_prodsubstnexclsn_srv.cds_zzc_prodsubstnexclsn_srv_Entities::setToActive",
+			"idIsLocal": false
+		}, {
+			"id": "Manage_Exlcusions::sap.suite.ui.generic.template.ObjectPage.view.Details::ZZC_ProdSubstnExclsn--action::cds_zzc_prodsubstnexclsn_srv.cds_zzc_prodsubstnexclsn_srv_Entities::setToInActive",
+			"idIsLocal": false
+		}, {
+			"id": "Manage_Exlcusions::sap.suite.ui.generic.template.ObjectPage.view.Details::ZZC_ProdSubstnExclsn--action::cds_zzc_prodsubstnexclsn_srv.cds_zzc_prodsubstnexclsn_srv_Entities::setToObsolete",
+			"idIsLocal": false
+		}]
+	},
+	"validAppVersions": {
+		"creation": "${project.version}",
+		"from": "${project.version}",
+		"to": "${project.version}"
+	},
+	"jsOnly": false,
+	"variantReference": "",
+	"appDescriptorChange": false
+}

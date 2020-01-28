@@ -1,0 +1,9 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+	<Column id="MDObject">
+		<Text text="Product"
+			tooltip="Product"/>
+		<customData>
+			<core:CustomData key="p13nData" value='\{"columnKey": "MDObject", "leadingProperty":["MDObject","MaterialName"]}'/>
+		</customData>
+	</Column>
+</core:FragmentDefinition>

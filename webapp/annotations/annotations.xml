@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+	<edmx:Reference Uri="/sap/opu/odata/sap/ZZC_PRODSUBSTNEXCLNS_SB/$metadata">
+		<edmx:Include Alias="Metadata" Namespace="cds_zzc_prodsubstnexclsn_srv"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="https://wiki.scn.sap.com/wiki/download/attachments/448470974/Common.xml?api=v2">
+		<edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+	</edmx:Reference>
+	<edmx:DataServices>
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Manage_Exlcusions.ZZC_PRODSUBSTNEXCLNS_SB">
+			<Annotations Target="cds_zzc_prodsubstnexclsn_srv.ZZC_ProdSubstnExclsnType">
+				<Annotation Term="com.sap.vocabularies.Common.v1.SideEffects" Qualifier="Admin">
+					<Record>
+						<PropertyValue Property="SourceProperties">
+							<Collection>
+								<PropertyPath>MDSubstnReason</PropertyPath>
+								<PropertyPath>MDObject</PropertyPath>
+								<PropertyPath>MDSubstnContextObject1</PropertyPath>
+								<PropertyPath>MDSubstnGroup</PropertyPath>
+								<PropertyPath>MDSubstnStatus</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="TargetProperties">
+							<Collection>
+								<PropertyPath>MDSubstnReasonDescription</PropertyPath>
+								<PropertyPath>MaterialName</PropertyPath>
+								<PropertyPath>Plant</PropertyPath>
+								<PropertyPath>GroupDescription</PropertyPath>
+								<PropertyPath>Status</PropertyPath>
+								<PropertyPath>LastChangedByUser</PropertyPath>
+								<PropertyPath>LastChangedOn</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="EffectTypes" EnumMember="ValueChange"/>
+					</Record>
+				</Annotation>
+			</Annotations>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
